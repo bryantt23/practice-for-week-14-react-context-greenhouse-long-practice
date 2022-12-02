@@ -1,14 +1,10 @@
 import ReactSlider from 'react-slider';
 import './Hygrometer.css';
 // Humidity has a default value of 40%
-import { createContext, useContext, useState } from 'react';
-
-export const ClimateContext = createContext();
-
-export const useClimate = () => useContext(ClimateContext);
+import { useClimate } from '../../context/ClimateContext';
 
 function Hygrometer() {
-  const [humidity, setHumidity] = useState(40);
+  const { humidity, setHumidity } = useClimate();
   return (
     <section>
       <h2>Hygrometer</h2>
